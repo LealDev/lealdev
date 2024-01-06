@@ -1,5 +1,6 @@
 package com.lealdedv.lealdev.services;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,4 +19,11 @@ public class CategoriaService {
     Optional<Categoria> obj = categoriaRepository.findById(id);
         return obj.orElse(null);
     }
+
+    public List<Categoria> saveAll(List <Categoria> catList){
+        List<Categoria> categorias = categoriaRepository.saveAll(catList);
+        return categorias;
+    }
+
+    
 }
